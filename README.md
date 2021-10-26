@@ -17,4 +17,4 @@ console.log('end');
 // end
 // [1,2,4,5,6,7,8]
 ```
-**Practice:** Try to solve the exercise in many ways, especially using the `Promise` object.
+**Practice:** Try to solve the exercise in many ways.
