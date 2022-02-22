@@ -12,8 +12,8 @@ Complete the necessary Node code to make `process(array)` function work asynchro
 ```javascript
 // your Node code here...
 console.log('start');
-examine([4, -6, -3, 7]).then(console.log); 
-examine([-7, 3, -2, 4]).then(console.log);
+process([4, -6, -3, 7]).then(console.log); 
+process([-7, 3, -2, 4]).then(console.log);
 console.log('end');
 
 // Test your code in Node.JS CLI, Output:
