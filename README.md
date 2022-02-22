@@ -5,7 +5,7 @@
 3. Name 10 core modules that Node provides by default, and 10 of the Global objects?
 
 ## Exercise 02
-Complete the necessary Node code to make `process(array)` function work asynchronously, `process()` will return:
+Complete the necessary Node code to make `process(array)` function work asynchronously, the function returns:
 * Sub-array of all the positive numbers, if the sum of the positive numbers was bigger than the sum of negative numbers
 * Sub-array of all the negative numbers, if the sum of the negative numbers was bigger than the sum of the positive numbers
 
