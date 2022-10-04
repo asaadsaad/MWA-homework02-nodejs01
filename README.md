@@ -20,6 +20,6 @@ console.log('end');
 // Test your code in Node.JS CLI, Output:
 // start
 // end
-// 3
+// 6
 ```
   
