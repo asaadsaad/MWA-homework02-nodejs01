@@ -1,0 +1,48 @@
+1.Explain why do we want sometimes to use `setImmediate` instead of using `setTimeout`? 
+Ans: It depends on how we insert the task in the Task Queue.When we need to insert task after certain time then we use setTimeout(f,time), it has two arguments function and time, 
+where as if we need to insert certain task immediately we should use setImmediate(f), which has only on argument i.e. function.
+
+2.Explain the difference between process.nextTick and setImmediate?
+Ans: process.nextTick(f) method push the synchronous task that has highest prioroty to the nextTick Queue where as 
+setImmediate(f) insert the asynchronous task to the check Queue inside the Task Queue.
+
+Name 10 core modules that Node provides by default, and 10 of the Global objects?
+
+Core modules
+1.querystring
+2.path
+3.url
+4.events
+5.os
+6.fs
+7.http
+8.util
+9.buffer
+10.stream
+
+Global objects
+1.process
+2.console
+3.setTimeout
+4.clearTimeout
+5.setInterval
+6.clearInterval
+7.setImmediate
+8.clearImmediate
+9.require
+10.module
+
+Write a function in Node factorial(n) to find asynchronously the factorial of a number. Write your observation (CPU, RAM.. etc) on what happens in Node Process when we calculate the factorial of a large number.
+
+async function factorial(x) {
+    if (x === 0 || x === 1) return 1;
+    return x * await factorial(x-1);
+}
+console.log("start");
+factorial(999).then(console.log);
+console.log("end");
+
+When 3 digits number is passed as argument, it shows infinity,
+When 2 digits number is passed as argument, it shows Maximum call stack size exceeded error.
+
+
