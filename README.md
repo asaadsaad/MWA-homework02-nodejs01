@@ -37,3 +37,4 @@ console.log('end');
 // 6
 ```
   
+For large number inputs I saw this error - `Maximum call stack size exceeded`
