@@ -1,0 +1,22 @@
+Exercise 1
+
+1. We sometimes want to use setImmediate instead of setTimeout, if we want to priorotize certain execution.
+
+2. If we use setImmediate, script will execute after all currently executing scripts have completed. 
+On the other hand, if we use process.nextTick, script will execute at event loops next tick. So it has highest priority.
+
+3. Core modules: http, fs, path, util, os, crypto, assert, stream, events, console
+   Global objects: process, buffer, console, module, require, exports, global, setTimeout, setInterval, __dirname
+   
+Exercise 2
+
+function factorial(num) {
+  if (num === 0) return Promise.resolve(1);
+  else {
+    return new Promise((resolve) => {
+      factorial(num - 1).then((result) => {
+        resolve(result * num);
+      });
+    });
+  }
+}
