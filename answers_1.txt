@@ -1,0 +1,41 @@
+# MWA Homework 02 - NodeJS 01
+## Written Exercises
+1. Explain why do we want sometimes to use `setImmediate` instead of using `setTimeout`? 
+2. Explain the difference between `process.nextTick` and `setImmediate`?
+3. Name 10 core modules that Node provides by default, and 10 of the Global objects?
+
+
+1. We sometimes want to use `setImmediate` because when in a I/O cycle, setImmediate() is executed before any timers. 
+Whereas if there are multiple timers and we use `setTimeout`, it adds to the existing queue not guaranteeing its execution and also 
+not until the next tick if inside a I/O cycle.
+
+2.  `process.nextTick` is given the most priority over any other tasks. Adding any task to nextTick queue makes sure that before
+any microTask and the event loop are paused and that any events in the nextTick queue is completed first. Whereas, `setImmediate` adds the
+task to be executed during the check stage of the libuv event loop, so it doesn't guarantee immediate execution despite the name.
+
+3. core node moudles are:-
+    i. fs
+    ii. os
+    iii. process
+    iv. readline
+    v. zlib
+    vi. worker
+    vii. http
+    viii. http2
+    ix. console
+    x. assert
+
+
+global objects are :-
+    i. __dirname
+    ii. __filename
+    iii. exports
+    iv. module
+    v. require
+    vi. global
+    vii. setImmediate
+    viii. clearImmediate
+    ix. setInterval
+    x. setTimeout
+
+
