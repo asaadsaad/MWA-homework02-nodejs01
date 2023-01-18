@@ -3,10 +3,6 @@ function factorial(n) {
   return new Promise((resolve, reject) => {
     resolve(n === 1 ? 1 : n * factorial(n - 1));
   }).then(res => res.json());
-  //   if (n === 1) {
-  //     return 1;
-  //   }
-  //   return n * factorial(n - 1);
 }
 
 console.log("start");
