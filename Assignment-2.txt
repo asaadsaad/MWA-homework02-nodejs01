@@ -1,0 +1,70 @@
+﻿1. Explain why do we want sometimes to use setImmediate instead of using setTimeout?
+setTimeout will execute the function after a certain threshold. Whenever we wrap a code inside a setTimeout, It is placed in a Timers queue and will not execute until the previously queued process gets executed.
+
+
+On the other hand, setImmediate places the process inside the check queue and it will only check whether there are some other pending I/O processes. If not, then it will execute immediately without any delay. 
+
+
+Further, even if we use setTimeout(fn,0), it will not guarantee the execution of the process immediately. It is because it needs to check the timer before its execution.
+
+
+2. Explain the difference between process.nextTick and setImmediate?
+setImmediate places the process inside the check queue of the event handlers and fires on the following tick of the event loop whereas, process.nextTick places the process inside the nextTickQueue which is not the part of the event loop. Any function placed inside the nextTick has the highest priority. Since it is not part of the event loop, nextTickQueue will be executed after the current execution regardless of the current phase of the event loop. This guarantees the execution of the process immediately again before the event loop continues.
+
+
+3. Name 10 core modules that Node provides by default, and 10 of the Global objects?
+Global Objects:
+* require()
+* Response
+* Request
+* setImmediate(callback[, ...args])
+* setInterval(callback, delay[, ...args])
+* setTimeout(callback, delay[, ...args])
+* structuredClone(value[, options])
+* SubtleCrypto
+* DOMException
+* Event
+* EventTarget
+* exports
+* fetch
+
+
+
+
+
+
+           Core Modules:
+
+
+   
+assert
+	provides a set of assertion functions useful for testing
+	buffer
+	provides the ability to handle buffers containing binary data
+	child_process
+	provides the ability to spawn child processes
+	console
+	provides a simple debugging console
+	cluster
+	allows to split a Node.js process into multiple workers to take advantage of multi-core systems
+	crypto
+	provides cryptographic functionality
+	dgram
+	provides an implementation of UDP Datagram sockets
+	dns
+	provides name resolution and DNS lookups
+	events
+	provides an API for managing events
+	fs
+	provides an API for interacting with the file system
+	http
+	provides an HTTP client/server implementation
+	http2
+	provides an HTTP/2 client/server implementation
+	https
+	provides an HTTPS client/server implementation
+	net
+	provides an asynchronous network API
+	
+
+4. The recursive solution of the large factorial problem will throw a stack overflow error. Since, on every number, it tries to call the function which occupies certain stack.
