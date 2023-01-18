@@ -1,0 +1,46 @@
+Exercise 1
+1
+Ans: We would want to use setImmediate instead of setTimeout if we immediately want to execute the function without any timeframe.
+
+2
+Ans: The process.nextTick is called and executed at first before any other asynchronous code present in
+both micro queue as well as event loop whereas the setImmediate adds any function in the check
+phase of the event loop and executes it immediately before any other timers present in the code.
+Also, process.nextTick has high priority than setImmediate.
+
+3
+Ans: 
+Core modules
+1.querystring
+2.path
+3.url
+4.events
+5.os
+6.fs
+7.http
+8.util
+9.buffer
+10.stream
+
+Global objects
+1.process
+2.console
+3.setTimeout
+4.clearTimeout
+5.setInterval
+6.clearInterval
+7.setImmediate
+8.clearImmediate
+9.require
+10.module
+
+Exercise 2
+
+async function factorial(x) {
+    if (x === 0 || x === 1) return 1;
+    return x * await factorial(x-1);
+}
+console.log("start");
+factorial(999).then(console.log);
+console.log("end");
+
