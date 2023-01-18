@@ -1,0 +1,37 @@
+Explain why do we want sometimes to use `setImmediate` instead of using `setTimeout`? 
+setTimeout executes the function asynchronous after some time but setImmediate executes immediately. setTimeOut is added to timers queue while setImmediate is added to check queue.
+
+Explain the difference between `process.nextTick` and `setImmediate`?
+The function wrapped inside setImmediate is added to the check queue while process.nextTick adds the function to nextTick queue. Check queue is handle by event loop while nextTick is not part of eventloop. NextTick has highest priority than all other queue that is handled by event loop. So, all function inside next tick executes before executing the function in other queue. Hence, the function wrapped by process.nextTick executes before the function wrapeed by setImmediate.
+
+Name 10 core modules that Node provides by default, and 10 of the Global objects?
+Core Modules:
+Assert/require('assert') - used for testing
+Buffer/require('buffer') -used to process raw bytes od data in memory
+Child Process/require('child_process') - used to manage chid process
+Cluster/require('cluster') - to take advantage of multi-core systemsso that it can handle more load.
+Crypto/ require('crypto')- used to support cryptography for encryption and decryption
+Events/ require('events') -used to handle events
+File System/ require('fs') -used to perform operation on files
+Http /require('http') - used to create HTTp server and Http Client.
+Path-path module includes methods to deal with file paths.
+querystring-To handle URL query strings
+stream- to handle streaming data
+
+Global objects:
+_filename- filename of the code being executed
+_dirname- directory that the currently executing script resided in.
+setTimeout(cb,ms)- to run callback after certain ms.
+clearTimeout(t)- to stop the timeout that was previously created with setTimeout
+setInterval(cb,ms)- used to run callback repeatedly after certain ms
+Process- used to get information on current process
+URL
+URLSearchParams
+require()-Used to import modules, JSON, and local files.
+setImmediate()- runs callback immediately
+
+
+
+
+
+
