@@ -68,4 +68,5 @@ console.log('end');
 // end
 // 6
 ```
+The above approach is not optimal for performance, especially for large numbers and it will consume a significant amount of CPU and RAM resources
   
