@@ -1,12 +1,13 @@
 // your Node code here...
 function factorial(n) {
-  return new Promise((resolve, reject) => {
-    resolve(n === 1 ? 1 : n * factorial(n - 1));
-  }).then(res => res.json());
+  return new Promise(async (resolve, reject) => {
+    resolve(n === 1 ? 1 : n * (await factorial(n - 1)));
+  });
 }
+function factorialAsync(n) {}
 
 console.log("start");
-factorial(3).then(console.log);
+factorial(38).then(console.log);
 console.log("end");
 
 // Test your code in Node.JS CLI, Output:
