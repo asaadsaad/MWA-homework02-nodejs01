@@ -1,0 +1,17 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "start": "nodemon main.ts"
+  },
+  "keywords": [],
+  "author": "Asaad Saad",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.3.2",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
+  }
+}
