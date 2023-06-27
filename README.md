@@ -1,25 +1,38 @@
-# MWA Homework 02 - NodeJS 01
+# MWA Homework 02
 ## Written Exercises
 1. Explain why do we want sometimes to use `setImmediate` instead of using `setTimeout`? 
 2. Explain the difference between `process.nextTick` and `setImmediate`?
 3. Name 10 core modules that Node provides by default, and 10 of the Global objects?
 
 ## Exercise 02
-Write a function in Node `factorial(n)` to find asynchronously the factorial of a number. Write your observation (CPU, RAM.. etc) on what happens in `Node Process` when we calculate the factorial of a large number.  
-* factorial(3) is 3 * factorial(2)
-* factorial(2) is 2 * factorial(1)
-* factorial(1) is 1 * factorial(0)
-* factorial(0) is 1
+Given the node application code within the `exercise02` folder, install all the dependencies with `npm i` command, and run the application with `npm run start` command.
+  
+Note how the `get_data()` method within the `data.ts` file returns the following response body:
 
-```javascript
-// your Node code here...
-console.log('start');
-factorial(3).then(console.log); 
-console.log('end');
+```typescript
+interface Todo { "userId": number, "id": number, "title": string, "completed": boolean }
 
-// Test your code in Node.JS CLI, Output:
-// start
-// end
-// 6
+const response_body = [
+  { "userId": 1, "id": 1, "title": "delectus", "completed": false },
+  { "userId": 1, "id": 2, "title": "quis officia", "completed": false },
+  { "userId": 2, "id": 3, "title": "suscipit incidunt", "completed": false }
+  // ...
+]
 ```
+Complete the code in `format.ts` and convert the response **asynchronously** into an object grouping the Todo items by `userId`, as follows:
+```typescript
+const desired_response = {
+    1 : [
+      { "id": 1, "title": "delectus", "completed": false}, 
+      { "id": 2, "title": "quis officia", "completed": false}
+    ],
+    2 : [
+      { "id": 3, "title": "suscipit incidunt", "completed": false }
+    ]
+  // ...
+}
+```
+The conversion allows for improving the time complexity of finding all Todo items for a specific user from O(n) to O(1). 
+  
+Create a new markdown file `solution02.md` and explain in detail the performance implications of your solution on the node process.
   
